@@ -27,6 +27,11 @@
   padding: 1rem;
 }
 
+.about .about__left ul li a.social-icon-link {
+  display: inline-flex;
+  padding: 0;
+}
+
 .about .about__right {
   flex: 1;
   max-width: 66rem;

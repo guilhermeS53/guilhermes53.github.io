@@ -3,6 +3,7 @@
   scroll-margin-top: 15rem;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .skills .skills__content {
@@ -27,7 +28,7 @@
   border: 1px solid var(--border);
   border-radius: 1.6rem;
   padding: 3rem 2rem;
-  transition: 0.18s ease;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .skills .skills__content ul li:hover {
