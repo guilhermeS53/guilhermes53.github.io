@@ -65,9 +65,25 @@
 .hero-animate-delay-4 { animation-delay: 0.6s; }
 
 .hero-image-animate {
-  animation: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  animation: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards,
+             gentleFloat 4s ease-in-out 1.3s infinite;
   opacity: 0;
 }
+
+/* ---- Floating / Bounce sutil ---- */
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+.float-animate {
+  animation: gentleFloat 3.5s ease-in-out infinite;
+}
+
+.float-animate-delay-1 { animation-delay: 0s; }
+.float-animate-delay-2 { animation-delay: 0.4s; }
+.float-animate-delay-3 { animation-delay: 0.8s; }
+.float-animate-delay-4 { animation-delay: 1.2s; }
 
 /* ---- Navbar Entrance ---- */
 @keyframes slideDown {

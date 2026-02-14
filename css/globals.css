@@ -70,12 +70,14 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  transition: background 0.3s ease;
 }
 
 .secondary-title {
   font-size: clamp(2.4rem, 2.2vw, 4rem);
   font-weight: 800;
   color: var(--title);
+  transition: color 0.3s ease;
 }
 
 .tertiary-title {
@@ -83,6 +85,7 @@ h1 {
   font-weight: 650;
   line-height: 1.35;
   color: var(--title);
+  transition: color 0.3s ease;
 }
 
 p, .p {
@@ -90,6 +93,7 @@ p, .p {
   font-size: 1.6rem;
   line-height: 1.9;
   color: var(--muted);
+  transition: color 0.3s ease;
 }
 
 p:not(:last-of-type), .p:not(:last-of-type) { margin-bottom: 1.6rem; }

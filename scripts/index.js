@@ -45,6 +45,13 @@ function setTheme(theme) {
 
   const meta = document.querySelector('meta[name="theme-color"]');
   if (meta) meta.content = theme === "dark" ? "#0b1220" : "#f8fafc";
+
+  /* Força repaint completo — resolve bug de renderização parcial em mobile */
+  requestAnimationFrame(() => {
+    document.body.style.display = "none";
+    document.body.offsetHeight; // trigger reflow
+    document.body.style.display = "";
+  });
 }
 
 function toggleTheme() {
