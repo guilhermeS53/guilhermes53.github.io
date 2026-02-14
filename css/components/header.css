@@ -12,9 +12,17 @@ header .header__left {
 }
 
 header .header__left p {
-  max-width: 50rem;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
+  max-width: 54rem;
+  margin-top: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+
+/* Botões CTA — flex-wrap pra não quebrar */
+header .header__left .header__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 0.6rem;
 }
 
 header .header__right .header__image {
@@ -27,18 +35,21 @@ header .header__right .header__image:after {
   display: block;
   width: 100%;
   height: 100%;
-  border: 1px solid var(--tertiary-color);
+  border: 1px solid var(--border);
   position: absolute;
-  top: -1.5rem;
-  right: -1.5rem;
-  border-radius: 0.5rem;
+  top: -1.2rem;
+  right: -1.2rem;
+  border-radius: 1.6rem;
   z-index: -1;
 }
 
 header .header__right .header__image .guilherme {
-  border-radius: 0.5rem;
-  min-width: 25rem;
+  border-radius: 1.6rem;
+  width: 30rem;
   max-width: 100%;
+  max-height: 38rem;
+  object-fit: cover;
+  display: block;
 }
 
 header .header__right .header__image .background {
@@ -46,6 +57,7 @@ header .header__right .header__image .background {
   top: -4rem;
   right: -2.5rem;
   z-index: -1;
+  opacity: 0.9;
 }
 
 @media only screen and (max-width: 768px) {
@@ -56,5 +68,25 @@ header .header__right .header__image .background {
 
   header .header__left {
     margin: 2rem auto 4rem;
+  }
+
+  header .header__left .header__cta {
+    flex-direction: column;
+  }
+
+  header .header__left .header__cta .btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  header .header__right .header__image .guilherme {
+    width: 24rem;
+    max-height: 28rem;
+    margin: 0 auto;
+  }
+
+  header .header__right .header__image:after {
+    top: -0.8rem;
+    right: -0.8rem;
   }
 }

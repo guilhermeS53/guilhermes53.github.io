@@ -1,6 +1,8 @@
 .skills {
-  background-color: var(--light-tertiary-color);
+  background: var(--surface-2);
   scroll-margin-top: 15rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .skills .skills__content {
@@ -11,6 +13,7 @@
 .skills .skills__content .description {
   max-width: 56rem;
   margin: 0 auto 6rem;
+  color: var(--muted);
 }
 
 .skills .skills__content ul {
@@ -19,8 +22,21 @@
   gap: 2rem;
 }
 
+.skills .skills__content ul li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.6rem;
+  padding: 3rem 2rem;
+  transition: 0.18s ease;
+}
+
+.skills .skills__content ul li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+}
+
 .skills .skills__content ul li .image-container {
-  background-color: var(--white);
+  background: var(--surface-2);
   padding: 2rem;
   border-radius: 50%;
   display: flex;
@@ -28,12 +44,16 @@
   height: 7rem;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0.4rem 1 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.1);
   margin: 0 auto;
+}
+
+.skills .skills__content ul li p {
+  color: var(--muted);
 }
 
 .skills .skills__content ul li h3 {
   font-size: 1.6rem;
   font-weight: 500;
-  margin-top: 2rem 0 1rem;
+  margin: 2rem 0 1rem;
 }

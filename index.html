@@ -4,8 +4,12 @@
     <!-- Meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio de Guilherme Sousa — Desenvolvedor Fullstack com experiência em HTML, CSS, React, Node.js, C# .NET e bancos de dados." />
+    <meta name="theme-color" content="#0b1220" />
     <!-- Title -->
-    <title>Portfolio - Guilherme Sousa</title>
+    <title>Guilherme Sousa — Desenvolvedor Fullstack</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2360a5fa'/%3E%3Cstop offset='100%25' stop-color='%238b5cf6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='DM Sans,sans-serif' font-size='52' font-weight='700' text-anchor='middle' fill='white'%3EGS%3C/text%3E%3C/svg%3E" />
     <!-- Styles -->
     <link rel="stylesheet" href="css/extends.css" />
     <!-- Fonts -->
@@ -20,9 +24,6 @@
     <!-- Navbar -->
     <nav class="navbar">
       <div class="navbar__content max-width mb-0">
-        <a href="/">
-          <img src="assets/logo-gs.svg " alt="Guilherme Sousa" />
-        </a>
         <ul class="navbar__links">
           <li><a href="#header">Início</a></li>
           <li><a href="#about">Sobre</a></li>
@@ -30,44 +31,69 @@
           <li><a href="#projects">Projetos</a></li>
           <li><a href="#footer">Contato</a></li>
         </ul>
-        <div class="navbar__mobile">
-          <img src="assets/menu.svg" alt="Menu" class="burguer" />
-          <ul class="mobile__links">
-            <li><a href="#header">Início</a></li>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#skills">Habilidades</a></li>
-            <li><a href="#projects">Projetos</a></li>
-            <li><a href="#footer">Contato</a></li>
-          </ul>
+        <div class="navbar__actions">
+          <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+            <div class="toggle-icon">
+              <div class="sun">
+                <div class="sun-core"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+              </div>
+              <div class="moon">
+                <div class="moon-shadow"></div>
+              </div>
+            </div>
+          </button>
+          <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+      <ul class="mobile__links" id="mobileLinks">
+        <li><a href="#header">Início</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#skills">Habilidades</a></li>
+        <li><a href="#projects">Projetos</a></li>
+        <li><a href="#footer">Contato</a></li>
+      </ul>
     </nav>
 
     <!-- Header-->
     <header id="header" class="max-width">
       <div class="header__left">
-        <h1>Guilherme Sousa Desenvolvedor Fullstack</h1>
-        <p>
+        <h1 class="hero-animate hero-animate-delay-1">Guilherme Sousa Desenvolvedor Fullstack</h1>
+        <p class="hero-animate hero-animate-delay-2">
           Desenvolvedor Fullstack com experiência na criação de aplicações web
           escaláveis e responsivas. Tenho conhecimento em tecnologias como
           <b>HTML, CSS, React, JavaScript (Node.js)</b>, além de domínio em
           linguagens <b>C# (.NET), Java</b> e banco de dados
           <b>SQL e MongoDB</b>.
         </p>
-        <p>
+        <p class="hero-animate hero-animate-delay-3">
           Com uma abordagem centrada na experiência do usuário, atuo no
           desenvolvimento de soluções que garantem segurança, performance e
           escalabilidade, sempre buscando inovação e aprimoramento contínuo para
           atender às demandas do mercado.
         </p>
-        <a href="#about" class="btn btn-primary">Sobre mim</a>
+        <div class="header__cta hero-animate hero-animate-delay-4">
+          <a href="#projects" class="btn btn-primary hover-lift">Ver projetos</a>
+          <a href="https://wa.me/5562996881509" target="_blank" class="btn btn-outline hover-lift">Falar no WhatsApp</a>
+          <a href="#about" class="btn btn-outline hover-lift">Sobre mim</a>
+        </div>
       </div>
       <div class="header__right">
         <div class="header__image">
           <img
-            src="./assets/guilherme-img.jpeg"
+            src="./assets/guilherme-image.jpeg"
             alt="Guilherme Sousa"
-            class="guilherme"
+            class="guilherme hero-image-animate"
           />
           <img
             src="assets/abstract.svg"
@@ -78,10 +104,12 @@
       </div>
     </header>
 
+    <hr class="section-divider glow" />
+
     <!-- Sobre -->
-    <section id="about" class="about max-width">
+    <section id="about" class="about max-width reveal">
       <div class="about__left">
-        <h2 class="secondary-title">Quem sou eu?</h2>
+        <h2 class="secondary-title reveal-left reveal-delay-1">Quem sou eu?</h2>
         <p>
           Que tal me seguir nas redes sociais e saber mais sobre o meu trabalho?
         </p>
@@ -90,26 +118,26 @@
             <a
               href="https://www.instagram.com/guilherme.sousa53?igsh=eHp6ZHMxNWhzMGpt&utm_source=qr"
               target="_blank"
-              ><img src="assets/instagram.svg" alt="Instagram"
+              ><img src="assets/instagram.svg" alt="Instagram" class="social-bounce"
             /></a>
           </li>
           <li>
             <a
               href="https://www.linkedin.com/in/guilherme-sousa-bbb983184/"
               target="_blank"
-              ><img src="assets/linkedin.svg" alt="LinkedIn"
+              ><img src="assets/linkedin.svg" alt="LinkedIn" class="social-bounce"
             /></a>
           </li>
           <li>
             <a
               href="https://www.facebook.com/guilherme.sousa53?mibextid=LQQJ4d"
               target="_blank"
-              ><img src="assets/facebook.svg" alt="Facebook"
+              ><img src="assets/facebook.svg" alt="Facebook" class="social-bounce"
             /></a>
           </li>
         </ul>
       </div>
-      <div class="about__right">
+      <div class="about__right reveal-right reveal-delay-2">
         <h3 class="tertiary-title mb-m">
           <b>Desenvolvedor Fullstack</b> fascinado por soluções criativas e
           resolução de problemas distintos.
@@ -119,7 +147,7 @@
           apaixonado por tecnologia e soluções inovadoras.
         </p>
         <p>
-          Com 3 meses de experiência com o Desenvolvimento Fullstack, tenho
+          Com 1 ano de experiência com o Desenvolvimento Fullstack, tenho
           atuado com diversas tecnologias, recursos e plataformas para criar
           soluções robustas, concretas e escaláveis que atendam às necessidades
           do mercado.
@@ -132,8 +160,10 @@
       </div>
     </section>
 
+    <hr class="section-divider glow" />
+
     <!-- Skills -->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills reveal">
       <div class="skills__content max-width">
         <h2 class="tertiary-title">
           <b>Minha caixinha de recursos e conhecimentos</b>
@@ -143,7 +173,7 @@
           criar soluções criativas e funcionais para meus clientes.
         </p>
         <ul>
-          <li class="skills__item">
+          <li class="skills__item hover-lift reveal reveal-delay-1">
             <div class="image-container">
               <img src="assets/notebook.png" alt="Desenvolvimento Web" />
             </div>
@@ -152,7 +182,7 @@
               modernas.
             </p>
           </li>
-          <li class="skills__item">
+          <li class="skills__item hover-lift reveal reveal-delay-2">
             <div class="image-container">
               <img src="assets/colors.png" alt="Web Design" />
             </div>
@@ -161,7 +191,7 @@
               experiência do usuário.
             </p>
           </li>
-          <li class="skills__item">
+          <li class="skills__item hover-lift reveal reveal-delay-3">
             <div class="image-container">
               <img src="assets/phone.png" alt="UX/UI Design" />
             </div>
@@ -170,7 +200,7 @@
               visualmente atraentes e intuitivas.
             </p>
           </li>
-          <li class="skills__item">
+          <li class="skills__item hover-lift reveal reveal-delay-4">
             <div class="image-container">
               <img src="assets/files.png" alt="Gerenciamento de versões" />
             </div>
@@ -184,7 +214,7 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="projects max-width">
+    <section id="projects" class="projects max-width reveal">
       <div class="projects__content">
         <h2 class="secondary-title">Meus Projetos em Destaque</h2>
         <p>
@@ -193,7 +223,7 @@
         </p>
       </div>
       <ul>
-        <li>
+        <li class="reveal reveal-delay-1">
           <div class="image">
             <img
               src="assets/project_node_react.jpg"
@@ -212,11 +242,12 @@
             <a
               href="https://github.com/guilhermeS53/Node-API-JWT-Cadastros"
               target="_blank"
+              class="animated-link"
               >Veja no GitHub &rarr;</a
             >
           </div>
         </li>
-        <li class="projects__reversed-list">
+        <li class="projects__reversed-list reveal reveal-delay-2">
           <div class="image">
             <img src="assets/coding-laptops.png" alt="eCommerce" />
           </div>
@@ -231,11 +262,12 @@
             <a
               href="https://github.com/guilhermeS53/SistemaDeTarefas"
               target="_blank"
+              class="animated-link"
               >Veja no GitHub &rarr;</a
             >
           </div>
         </li>
-        <li>
+        <li class="reveal reveal-delay-3">
           <div class="image">
             <img src="assets/currency-converter.png" alt="Currency Converter" />
           </div>
@@ -251,6 +283,7 @@
             <a
               href="https://github.com/guilhermeS53/currency-converter"
               target="_blank"
+              class="animated-link"
               >Veja no GitHub &rarr;</a
             >
           </div>
@@ -259,7 +292,7 @@
     </section>
 
     <!-- Footer -->
-    <footer id="footer">
+    <footer id="footer" class="reveal">
       <div class="footer__content max-width mb-0">
         <h2 class="tertiary-title mb-s"><b>Vamos conversar?</b></h2>
         <p class="mb-m">
@@ -270,18 +303,17 @@
         <div class="footer__contact mb-m">
           <span class="mb-m"
             >E-mail:
-            <a href="mailto:" target="_blank">guilhermetxt53@gmail.com</a></span
-          >
+            <a href="mailto:guilhermetxt53@gmail.com" target="_blank">guilhermetxt53@gmail.com</a>
           <span
             >WhatsApp:
-            <a href="https://wa.me/" target="_blank">(62) 99688-1509</a></span
-          >
+            <a href="https://wa.me/5562996881509" target="_blank">(62) 99688-1509</a>
         </div>
         <ul class="mb-l">
           <li>
             <a
               href="https://www.instagram.com/guilherme.sousa53?igsh=eHp6ZHMxNWhzMGpt&utm_source=qr"
               target="_blank"
+              class="social-icon-link"
               ><img src="assets/instagram.svg" alt="Instagram"
             /></a>
           </li>
@@ -289,6 +321,7 @@
             <a
               href="https://www.linkedin.com/in/guilherme-sousa-bbb983184/"
               target="_blank"
+              class="social-icon-link"
               ><img src="assets/linkedin.svg" alt="LinkedIn"
             /></a>
           </li>
@@ -296,12 +329,13 @@
             <a
               href="https://www.facebook.com/guilherme.sousa53?mibextid=LQQJ4d"
               target="_blank"
+              class="social-icon-link"
               ><img src="assets/facebook.svg" alt="Facebook"
             /></a>
           </li>
         </ul>
         <p class="footer__copyright">
-          &copy; 2024 Guilherme Sousa. Todos os direitos reservados.
+          &copy; 2026. Todos os direitos reservados.
         </p>
       </div>
     </footer>

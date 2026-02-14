@@ -1,0 +1,195 @@
+/* ========================================
+   ANIMATIONS - Portfolio Guilherme Sousa
+   ======================================== */
+
+/* ---- Scroll Reveal ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variações de direção */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-3rem);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(3rem);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.visible,
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger delay */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ---- Hero Entrance ---- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(2.4rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.hero-animate {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.hero-animate-delay-1 { animation-delay: 0.15s; }
+.hero-animate-delay-2 { animation-delay: 0.3s; }
+.hero-animate-delay-3 { animation-delay: 0.45s; }
+.hero-animate-delay-4 { animation-delay: 0.6s; }
+
+.hero-image-animate {
+  animation: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  opacity: 0;
+}
+
+/* ---- Navbar Entrance ---- */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-100%); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.navbar {
+  animation: slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ---- CTA Pulse ---- */
+@keyframes subtlePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.3); }
+  50%      { box-shadow: 0 0 0 8px rgba(96, 165, 250, 0); }
+}
+
+.btn.btn-primary {
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+.btn.btn-primary:hover {
+  animation: none;
+}
+
+/* ---- Hover lift ---- */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.12);
+}
+
+/* ---- Social bounce ---- */
+.social-bounce:hover {
+  animation: socialBounce 0.4s ease;
+}
+
+@keyframes socialBounce {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.2); }
+  70%  { transform: scale(0.95); }
+  100% { transform: scale(1.08); }
+}
+
+/* ---- Divisórias de Seção (gradient line) ---- */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--accent) 40%, transparent) 20%,
+    var(--accent) 50%,
+    color-mix(in srgb, var(--accent) 40%, transparent) 80%,
+    transparent
+  );
+  margin: 4rem auto;
+  opacity: 0.6;
+}
+
+/* Variação com glow */
+.section-divider.glow {
+  height: 1px;
+  position: relative;
+}
+
+.section-divider.glow::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 20%;
+  right: 20%;
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--accent) 15%, transparent),
+    transparent
+  );
+  filter: blur(4px);
+}
+
+/* ---- Footer social icons estilizados ---- */
+.social-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 1.2rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-icon-link:hover {
+  background: var(--accent-weak);
+  transform: translateY(-3px);
+  box-shadow: 0 0.8rem 2rem color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.social-icon-link img {
+  width: 2rem;
+  height: 2rem;
+  filter: var(--icon-filter);
+  transition: 0.2s ease;
+}
+
+/* ---- Preferência de movimento reduzido ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal, .reveal-left, .reveal-right {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,13 +1,62 @@
 :root {
-  --white: #ffffff;
-  --gray: #d9d9d9;
-  --black: #000000;
-  --primary-color: #02073e;
-  --secondary-color: #0f2137;
-  --dark-secondary-color: #3c415c;
-  --tertiary-color: #a6b1e1;
-  --light-tertiary-color: #f3f6fb;
-  --text-color: #343d48;
-
+  /* base */
   --font-family: "DM Sans", sans-serif;
+  --nav-h: 7.2rem;
+
+  /* cores (DARK default) */
+  --bg: #0b1220;
+  --surface: #0f172a;
+  --surface-2: #111c33;
+  --border: rgba(148, 163, 184, 0.16);
+
+  --text: #e5e7eb;
+  --muted: #cbd5e1;
+  --muted-2: rgba(203, 213, 225, 0.72);
+
+  --title: #f8fafc;
+
+  /* brand/accent */
+  --accent: #60a5fa;
+  --accent-weak: rgba(96, 165, 250, 0.16);
+
+  /* navbar/sidebar bg (sem color-mix) */
+  --nav-bg: rgba(11, 18, 32, 0.88);
+
+  /* compat legado */
+  --white: #ffffff;
+  --primary-color: var(--title);
+  --secondary-color: var(--text);
+  --text-color: var(--muted);
+
+  /* ícones */
+  --icon-opacity: 0.85;
+  --icon-scale: 1;
+  --icon-filter: brightness(0) invert(1);
 }
+
+/* LIGHT THEME */
+html[data-theme="light"] {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-2: #f1f5f9;
+  --border: rgba(15, 23, 42, 0.12);
+
+  --text: #0f172a;
+  --muted: #334155;
+  --muted-2: rgba(51, 65, 85, 0.74);
+
+  --title: #0b1220;
+
+  --accent: #2563eb;
+  --accent-weak: rgba(37, 99, 235, 0.12);
+
+  --nav-bg: rgba(248, 250, 252, 0.88);
+
+  --primary-color: var(--title);
+  --text-color: var(--muted);
+
+  --icon-filter: none;
+}
+
+/* DARK THEME (explícito — mesmo que :root) */
+html[data-theme="dark"] {}
