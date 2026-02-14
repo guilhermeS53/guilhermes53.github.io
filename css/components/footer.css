@@ -1,5 +1,6 @@
 footer {
-  background-color: var(--light-tertiary-color);
+  background: var(--surface-2);
+  border-top: 1px solid var(--border);
 }
 
 footer .footer__content {
@@ -11,6 +12,16 @@ footer .footer__content {
 footer .footer__content .footer__contact span {
   display: block;
   font-weight: 500;
+  color: var(--muted);
+}
+
+footer .footer__content .footer__contact a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+footer .footer__content .footer__contact a:hover {
+  text-decoration: underline;
 }
 
 footer .footer__content ul li {
@@ -22,6 +33,17 @@ footer .footer__content ul a {
   padding: 1rem;
 }
 
+footer .footer__content ul a img {
+  filter: var(--icon-filter);
+  transition: 0.18s ease;
+}
+
+footer .footer__content ul a:hover img {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
 footer .footer__content .footer__copyright {
   font-size: 1.4rem;
+  color: var(--muted-2);
 }

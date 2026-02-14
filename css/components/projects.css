@@ -1,6 +1,7 @@
 .projects {
   margin-bottom: 16rem;
   scroll-margin-top: 15rem;
+  padding-top: 4rem;
 }
 
 .projects .projects__content {
@@ -14,6 +15,18 @@
   justify-content: space-between;
   align-items: center;
   gap: 4rem;
+
+  /* Card moderno */
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.6rem;
+  padding: 2rem;
+  transition: 0.2s ease;
+}
+
+.projects ul li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1.8rem 4.5rem rgba(0, 0, 0, 0.10);
 }
 
 .projects ul li.projects__reversed-list {
@@ -21,7 +34,7 @@
 }
 
 .projects ul li:not(:last-of-type) {
-  margin-bottom: 12rem;
+  margin-bottom: 4rem;
 }
 
 .projects ul li .image img {
@@ -29,6 +42,8 @@
   min-width: 40rem;
   max-width: 47rem;
   height: auto;
+  border-radius: 1.2rem;
+  display: block;
 }
 
 .projects ul li .projects__info {
@@ -36,12 +51,55 @@
 }
 
 .projects ul li .projects__info p {
-  margin: 1rem 0 4rem;
+  margin: 1rem 0 2rem;
 }
 
+/* Link estilizado como badge/botão */
 .projects ul li .projects__info a {
-  font-weight: 500;
-  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 10rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.projects ul li .projects__info a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 70%, #8b5cf6));
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.projects ul li .projects__info a:hover {
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 0.8rem 2.4rem color-mix(in srgb, var(--accent) 30%, transparent);
+  text-decoration: none;
+}
+
+.projects ul li .projects__info a:hover::before {
+  opacity: 1;
+}
+
+.projects ul li .projects__info a span,
+.projects ul li .projects__info a {
+  position: relative;
+  z-index: 1;
 }
 
 @media only screen and (max-width: 768px) {
@@ -54,7 +112,8 @@
     max-width: 66rem;
   }
 
-  .projects ul li .image .img {
+  .projects ul li .image img {
     min-width: auto;
+    max-width: 100%;
   }
 }
