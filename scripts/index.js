@@ -90,3 +90,9 @@ const revealObserver = new IntersectionObserver(
 );
 
 revealElements.forEach((el) => revealObserver.observe(el));
+
+/* ===== Proteção de Imagens ===== */
+document.querySelectorAll("img").forEach(img => {
+  img.addEventListener("contextmenu", e => e.preventDefault());
+  img.addEventListener("dragstart", e => e.preventDefault());
+});
