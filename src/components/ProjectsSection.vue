@@ -1,3 +1,64 @@
+<template>
+  <section id="projects" class="projects max-width reveal">
+    <div class="projects__content">
+      <h2 class="secondary-title">Meus Projetos em Destaque</h2>
+      <p>
+        De ideias abstratas a projetos bem-sucedidos, aqui estão alguns dos
+        meus trabalhos mais recentes
+      </p>
+    </div>
+    <ul>
+      <li
+        v-for="(project, index) in projects"
+        :key="project.title"
+        :class="[
+          project.reversed ? 'projects__reversed-list' : '',
+          'reveal',
+          `reveal-delay-${index + 1}`
+        ]"
+      >
+        <div class="image">
+          <img :src="project.image" :alt="project.title" />
+        </div>
+        <div class="projects__info">
+          <h3 class="tertiary-title" v-html="project.title"></h3>
+          <p v-html="project.description"></p>
+          <a :href="project.link" target="_blank" class="animated-link">
+            Confira &rarr;
+          </a>
+        </div>
+      </li>
+    </ul>
+  </section>
+</template>
+
+<script setup>
+const projects = [
+  {
+    title: 'Desafio Smart Fit – <br>Reabertura das Unidades',
+    description: 'Desafio de desenvolvimento de interface inspirado na Smart Fit, utilizando TypeScript, HTML e SCSS para construção de uma aplicação moderna, responsiva e com boas práticas de organização e componentização.',
+    image: '/assets/smartfit-challenge.webp',
+    link: 'https://desafio-smart-iohwf4kjf-guilhermes53s-projects.vercel.app',
+    reversed: false
+  },
+  {
+    title: 'DevSorteio',
+    description: 'DevSorteio é uma aplicação web desenvolvida para praticar e consolidar conceitos de JavaScript, com foco na lógica de geração de números aleatórios. <br>O projeto simula um sistema de sorteio real, aplicando manipulação de DOM e organização de código para entregar uma experiência simples e funcional.',
+    image: '/assets/devsorteio.webp',
+    link: 'https://dev-sorteador-indol.vercel.app',
+    reversed: true
+  },
+  {
+    title: 'Aplicação Web para Conversão do Real Brasileiro para Dólar, Euro, Libra ou Bitcoin',
+    description: 'Desenvolvimento de aplicação web com JavaScript puro para converter moedas. Além disso, foram utilizados conceitos de organização de código e componentização.',
+    image: '/assets/currency-converter.png',
+    link: 'https://currency-converter-bice-kappa.vercel.app',
+    reversed: false
+  }
+]
+</script>
+
+<style scoped>
 .projects {
   margin-bottom: 16rem;
   scroll-margin-top: 15rem;
@@ -15,8 +76,6 @@
   justify-content: space-between;
   align-items: center;
   gap: 4rem;
-
-  /* Card moderno */
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 1.6rem;
@@ -117,3 +176,4 @@
     max-width: 100%;
   }
 }
+</style>

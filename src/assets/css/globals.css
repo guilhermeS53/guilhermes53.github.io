@@ -20,20 +20,31 @@ img {
 
 html {
   font-size: 62.5%;
-  height: 100%;
-  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ---- View Transition — Circular Reveal (tema) ---- */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
 }
 
 body {
   font-size: 1.6rem;
-  height: 100%;
+  min-height: 100vh;
   overflow-x: hidden;
-  overflow-y: auto;
-  scroll-behavior: smooth;
   padding-top: calc(var(--nav-h) + 3rem);
   background: var(--bg);
   color: var(--text);
-  transition: background 0.3s ease, color 0.3s ease;
 
   /* Scrollbar moderna — Firefox */
   scrollbar-width: thin;
@@ -79,11 +90,11 @@ h1 {
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.05;
+  color: var(--title);
   background: linear-gradient(135deg, var(--title) 40%, var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  transition: background 0.3s ease;
 }
 
 .secondary-title {
