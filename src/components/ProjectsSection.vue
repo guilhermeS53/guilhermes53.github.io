@@ -38,7 +38,7 @@ const projects = [
     title: 'Desafio Smart Fit – <br>Reabertura das Unidades',
     description: 'Desafio de desenvolvimento de interface inspirado na Smart Fit, utilizando TypeScript, HTML e SCSS para construção de uma aplicação moderna, responsiva e com boas práticas de organização e componentização.',
     image: '/assets/smartfit-challenge.webp',
-    link: 'https://desafio-smart-iohwf4kjf-guilhermes53s-projects.vercel.app',
+    link: 'https://desafio-smart-fit-eight.vercel.app/',
     reversed: false
   },
   {
