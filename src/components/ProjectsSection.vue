@@ -23,16 +23,37 @@
         <div class="projects__info">
           <h3 class="tertiary-title" v-html="project.title"></h3>
           <p v-html="project.description"></p>
-          <a :href="project.link" target="_blank" class="animated-link">
-            Confira &rarr;
+          <a
+            :href="project.link"
+            class="animated-link"
+            @click.prevent="openPreview(project)"
+            @click.middle.prevent
+          >
+            Confira
           </a>
         </div>
       </li>
     </ul>
+
+    <ProjectPreviewModal
+      v-model="showPreview"
+      :project="selectedProject"
+    />
   </section>
 </template>
 
 <script setup>
+import { ref } from 'vue'
+import ProjectPreviewModal from './ProjectPreviewModal.vue'
+
+const showPreview = ref(false)
+const selectedProject = ref(null)
+
+function openPreview(project) {
+  selectedProject.value = project
+  showPreview.value = true
+}
+
 const projects = [
   {
     title: 'Desafio Smart Fit – <br>Reabertura das Unidades',
@@ -49,7 +70,7 @@ const projects = [
     reversed: true
   },
   {
-    title: 'Aplicação Web para Conversão do Real Brasileiro para Dólar, Euro, Libra ou Bitcoin',
+    title: 'Aplicação Web para Conversão de Moedas',
     description: 'Desenvolvimento de aplicação web com JavaScript puro para converter moedas. Além disso, foram utilizados conceitos de organização de código e componentização.',
     image: '/assets/currency-converter.png',
     link: 'https://currency-converter-bice-kappa.vercel.app',
